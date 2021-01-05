@@ -11,6 +11,7 @@ bookRouter.get('/:id/edit', bookController.edit)
 bookRouter.post('/', bookController.create)
 
 bookRouter.put('/:id', bookController.update)
+bookRouter.delete('/:id', bookController.remove)
 
 
 module.exports = bookRouter;

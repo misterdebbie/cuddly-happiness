@@ -9,5 +9,7 @@
 <a href="/">Return to book homepage</a>
 <br>
 <a href="<%=`/${book.id}/edit`%>">Edit this entry</a>
-
+<form action="<%= `/${book.id}?_method=DELETE` %>" method="POST">
+  <input type="submit" value="Delete" />
+</form>
 <%- include('../partials/footer.ejs')%>

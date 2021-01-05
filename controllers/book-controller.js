@@ -56,6 +56,15 @@ bookController.create = (req,res) => {
       res.status(400).json(err);
     });
 };
+bookController.remove = (req,res) => {
+  Book.remove(req.params.id)
+    .then(() => {
+      res.redirect('/')
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+};
 /*module.exports = {
   index: (req,res) => {
     res.render('books/bmain')

@@ -28,6 +28,15 @@ Book.create = book => {
     [book.title, book.description]
   );
 };
+Book.remove = id => {
+  return dbase.none(
+    `
+      DELETE FROM books
+      WHERE id = $1
+    `,
+    [id]
+  );
+};
 
 
 module.exports = Book;

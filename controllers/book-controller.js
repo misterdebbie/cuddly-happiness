@@ -11,6 +11,15 @@ bookController.index = (req,res) => {
     });
 };
 
+bookController.display = (req,res) => {
+  Book.searchById(req.params.id)
+    .then(book => {
+      res.render('books/displayOne', { book: book})
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+};
 /*module.exports = {
   index: (req,res) => {
     res.render('books/bmain')

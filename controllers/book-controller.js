@@ -41,6 +41,21 @@ bookController.update = (req,res) => {
       res.status(400).json(err);
     });
 };
+bookController.new = (req,res) => {
+  res.render('books/new')
+};
+bookController.create = (req,res) => {
+  Book.create({
+    title: req.body.title,
+    description: req.body.description
+  })
+    .then(book => {
+      res.redirect(`/${book.id}`)
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
+};
 /*module.exports = {
   index: (req,res) => {
     res.render('books/bmain')

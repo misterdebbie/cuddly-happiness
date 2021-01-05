@@ -1,10 +1,13 @@
 <%- include('../partials/header.ejs')%>
-<h3>a book</h3>
+<h3>A book</h3>
   <div class="book">
     <h3>
         <%= book.title %>
     </h3>
     <p><%= book.description %></p>
   </div>
-<a href="/">return to book homepage</a>
+<a href="/">Return to book homepage</a>
+<br>
+<a href="<%=`/${book.id}/edit`%>">Edit this entry</a>
+
 <%- include('../partials/footer.ejs')%>

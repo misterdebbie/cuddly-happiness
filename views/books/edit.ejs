@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs')%>
+
+<h3>Book entry edit</h3>
+
+<form action="<%= `/${book.id}?_method=PUT` %>" method="POST">
+  <label for="title">Title</label>
+  <input id="title" type="text" name="title" value="<%= book.title %>" />
+
+  <br />
+  <br>
+  <label for="description">Description</label>
+  <input id="description" type="text" name="description" value="<%= book.description %>" />
+
+  <br />
+  <br>
+  <input type="submit" value="Complete edit changes" />
+</form>
+
+<a href="<%= `/${book.id}` %>">Undo edit</a>
+<%- include('../partials/footer.ejs')%>

@@ -1,0 +1,13 @@
+<%- include('../partials/header.ejs')%>
+<h3>books collection</h3>
+<% books.forEach(book => { %>
+  <div class="book">
+    <h3>
+      <a href="<%= `/${book.id}` %>">
+        <%= book.title %>
+      </a>
+    </h3>
+    <p><%= book.description %></p>
+  </div>
+<% }) %>
+<%- include('../partials/footer.ejs')%>
